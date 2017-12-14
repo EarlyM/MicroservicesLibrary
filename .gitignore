@@ -1,0 +1,7 @@
+.idea/
+MicroservicesLibrary.iml
+.gitignore
+book-service/book-service.iml
+gateway-service/gateway-service.iml
+message-service/message-service.iml
+user-service/user-service.iml
