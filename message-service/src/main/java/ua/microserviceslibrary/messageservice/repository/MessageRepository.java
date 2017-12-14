@@ -11,6 +11,6 @@ public interface MessageRepository extends CrudRepository<Message, Long>{
 
     List<Message> getAllByBookId(Long bookId);
 
-    List<Message> findAllByBookIdOrderByParentDescIdAsc(Long bookId);
+    List<Message> findAllByBookIdOrderByParentAscIdAsc(Long bookId);
 
 }

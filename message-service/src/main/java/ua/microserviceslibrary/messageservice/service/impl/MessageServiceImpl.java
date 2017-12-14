@@ -6,9 +6,11 @@ import ua.microserviceslibrary.messageservice.model.Message;
 import ua.microserviceslibrary.messageservice.repository.MessageRepository;
 import ua.microserviceslibrary.messageservice.service.MessageService;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class MessageServiceImpl implements MessageService {
 
     @Autowired
