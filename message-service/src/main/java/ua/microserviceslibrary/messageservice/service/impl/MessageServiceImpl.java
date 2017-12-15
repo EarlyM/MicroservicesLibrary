@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ua.microserviceslibrary.messageservice.model.Message;
 import ua.microserviceslibrary.messageservice.repository.MessageRepository;
 import ua.microserviceslibrary.messageservice.service.MessageService;
+import ua.microserviceslibrery.commonmodule.dto.message.request.MessageRequest;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -18,8 +19,9 @@ public class MessageServiceImpl implements MessageService {
 
 
     @Override
-    public List<Message> getAllMessageByBook(Long bookId) {
-        return messageRepository.getAllByBookId(bookId);
+    public List<Message> getAllMessageByBook(MessageRequest messageRequest) {
+
+        return messageRepository.findAllByBookIdOrderByParentAscIdAsc(messageRequest.getBookId());
     }
 
     @Override

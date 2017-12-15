@@ -23,6 +23,9 @@ public class Account {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "user_email")
+    private String email;
+
     @Column(name = "role")
     private String role;
 

@@ -1,6 +1,8 @@
 package ua.microserviceslibrary.messageservice.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import ua.microserviceslibrery.commonmodule.dto.message.MessageDto;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -9,6 +11,7 @@ import java.util.Date;
 
 @Table(name = "messages")
 @Data
+@AllArgsConstructor
 public class Message {
 
     @Id
@@ -29,4 +32,8 @@ public class Message {
 
     @Column(name = "book_id")
     private Long bookId;
+
+    public MessageDto getDto(){
+        return new MessageDto(id, text, createDate, accountLogin, parent);
+    }
 }
